@@ -1,0 +1,29 @@
+<style type="text/css">
+  .box-product{
+    margin-right: 13px;
+  }
+  .box-product .price{
+    font-size: 13px;
+  }
+</style>
+<div class="box">
+    
+      <div>
+        <h1 class="title_module"><span>Новые товары</span></h1>
+        <div class="box-content">
+        <% @products.each do |product| %>
+            <a class="image_link" href="<%= product_category_product_path(product.product_category, product) %>">
+            <div class="box-product"><%= image_tag product.avatar.url(:thumb) %>
+             </a>
+             <h3 class="name"><%= link_to product.name, product_category_product_path(product.product_category, product) %></h3>
+             
+              <p class="wrap_price"> <span class="price"><%= number_to_currency(product.price, unit: "р.",delimiter: " ' ",  format: "%n %u", precision: 0) %></span> </p>
+              <p class="submit">
+                 <%= button_to 'Купить', line_items_path(product_id: product),{ class: "button" }%>
+              </p>
+            </div>
+          
+        <% end %>
+        </div>
+      </div>
+    </div>

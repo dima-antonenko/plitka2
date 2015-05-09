@@ -1,0 +1,15 @@
+<% provide(:title, @post.meta_title) %>
+<% provide(:description, @post.meta_description) %>
+<% provide(:keywords, @post.meta_keywords) %>
+ <%= render('post_categories/blocks/sidebar') %>
+  <div id="content">
+    <h1><span class="h1-top"><%= @post.title %></span></h1>
+    <div class="information_content">
+      <div class="post_item">
+        <p class="post_info">опубликовано <%= @post.updated_at.to_s[2...-4] %></p>
+        <div class="imageborder"><%= image_tag @post.avatar.url(:big) %></div>
+          <%= @post.text.html_safe %>
+       </div>
+      <div class="clear"></div>
+    </div>
+  </div>

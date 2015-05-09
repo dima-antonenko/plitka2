@@ -1,0 +1,16 @@
+  
+  <div id="column-right">
+    <div class="box">
+      <div class="box-heading"><%= @news_menu.title %></div>
+      <div class="box-content">
+        <ul>
+          <% @news_menu.menu_items.order(:position).each do |menu_item| %>
+          <li>
+          <%= link_to menu_item.title, menu_item.link %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>

@@ -1,0 +1,5 @@
+<%= render '/product_categories/blocks/sidebar/sidebar' %>
+
+<div id= "content">
+	<%= @text_home.where(name: "Текст на главной странице").first.value.html_safe  %>
+</div>

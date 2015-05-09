@@ -1,0 +1,73 @@
+<style type="text/css">
+  #content{
+    margin-top: -64px;
+  }
+  .category-info {
+    padding-top: 23px;
+  }
+</style>
+
+<%= render '/product_categories/blocks/sidebar/sidebar' %>
+
+  <div id="content">
+  
+    <h1><span class="h1-top">Каталог</span></h1>
+    <div class="category-info">
+      
+    </div>
+
+    
+    
+   <div class="product-grid">
+<% @i = -1 %>
+<% @product_categories.each do |category| %>
+
+      <% if category.product_category_id == category.id %>
+
+              <% if @i == 2  %>
+                    <% @i = 0 %>
+                    <div class="box-product last-item row-first">
+                            
+                             
+                                <div class="list_grid_right">
+                                  <h3 class="name "><a class="category_name" href="<%= product_category_path(category) %>" title=""><%= category.name %></a>
+                                    
+                                  </h3>
+                                 
+                                  <p class="submit">
+                                    <!-- <input type="button" value="Add to Cart" class="button"> -->
+                                    
+                                  </p>
+                                </div>
+                    </div>
+                    
+              <% else %>
+                    <% @i = @i + 1 %>
+                    <div class="box-product ">
+                             
+                                <div class="list_grid_right">
+                                  <h3 class="name"><a class="category_name" href="<%= product_category_path(category) %>" title=""><%= category.name %></a>
+                                    
+                                  </h3>
+                                  
+                                  <p class="submit">
+                                    <!-- <input type="button" value="Add to Cart" class="button"> -->
+                                    
+                                  </p>
+                                </div>
+                    </div>
+                  
+
+              <% end %>
+      <% end%>
+<% end %>      
+</div>
+</div>
+  
+	
+    <div class="product-filter">
+      <div class="display">
+       
+      </div>
+    </div>
+

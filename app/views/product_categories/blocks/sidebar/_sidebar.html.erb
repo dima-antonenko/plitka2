@@ -1,0 +1,178 @@
+<style type="text/css">
+  
+  #menu-v li, #menu-v a {zoom:1;} /* Hacks for IE6, IE7 */
+  #menu-v, #menu-v ul
+  {
+      
+      border-top:none;
+      position: relative; font-size:0;
+      list-style: none; margin: 0; padding: 0; display:block;
+      z-index:9;
+      
+    border-radius: 10px;
+
+  }
+                  
+  /* Top level menu links style
+  ---------------------------------------*/
+
+  #menu-v li
+  {
+      list-style: none; margin: 0; padding: 0;
+      width: 100%;
+  }
+  #menu-v li a
+  {
+      font: normal 12px Arial;
+      display: block;
+      /*overflow: auto; force hasLayout in IE7 */
+      font-size: 15px;
+      line-height: 30px !important;
+      text-decoration: none;
+      line-height:26px;
+      padding-left:26px;    
+      color: #4d4d4d;        
+  }
+
+  #menu-v ul li a
+  {
+      line-height:30px;
+      color: #4d4d4d;
+
+      font-family: "Source Sans Pro",Arial;
+          font-size: 14px;
+    text-decoration: none;
+   
+    background: none;
+  }
+                  
+  #menu-v li a.arrow:hover
+  { 
+      background: none; 
+      background-repeat: no-repeat;
+      background-position: 97% 50%;
+
+  }
+          
+  /*Sub level menu items
+  ---------------------------------------*/
+  #menu-v li ul
+  {
+      position: absolute;
+      width: 200px; /*Sub Menu Items width */
+      visibility:hidden;
+
+       float: left;
+    font-family: "Source Sans Pro",Arial;
+    font-size: 14px;
+
+    border-radius: 10px;
+    display: block;
+
+    list-style: outside none none;
+  
+  
+    z-index: 9;
+     border: 1px solid #fada99;
+     background: white;
+
+  }
+          
+  #menu-v a.arrow
+  {
+      background-image:url(arrow.gif);
+      background-repeat: no-repeat;
+      background-position: 97% 50%;
+       width: 100%;
+  }
+  #menu-v li:hover, #menu-v li.onhover
+  {
+      background-position:0 -62px;
+  }
+  #menu-v ul li
+  {
+      
+      width: 95% !important;
+  }
+  #menu-v ul li:hover, #menu-v ul li.onhover
+  {
+      
+      
+  }
+  
+  #menu-v ul li:hover, #menu-v ul li.onhover
+  {
+     width: 205px;
+  }
+  
+  #menu-v ul li ul{
+    background: #FFF !important;
+  }
+
+  #menu-v ul li ul li
+  {
+    width: 95% !important;
+  }
+
+  /* Holly Hack for IE \
+  * html #menu-v  li
+  {
+      float:left;
+      height: 1%;
+  }
+  * html #menu-v  li a
+  {
+      height: 1%;
+  }*/
+  /* End */
+  .box-content{
+    border-radius: 10px;
+    float: left;
+    font-family: "Source Sans Pro",Arial;
+    font-size: 14px;
+  }
+</style>
+
+<script type="text/javascript">
+      var mcVM_options={menuId:"menu-v",alignWithMainMenu:true};
+    /* www.menucool.com/vertical/vertical-menu.*/
+    init_v_menu(mcVM_options);function init_v_menu(a){if(window.addEventListener)window.addEventListener("load",function(){start_v_menu(a)},false);else window.attachEvent&&window.attachEvent("onload",function(){start_v_menu(a)})}function start_v_menu(i){var e=document.getElementById(i.menuId),j=e.offsetHeight,b=e.getElementsByTagName("ul"),g=/msie|MSIE 6/.test(navigator.userAgent);if(g)for(var h=e.getElementsByTagName("li"),a=0,l=h.length;a<l;a++){h[a].onmouseover=function(){this.className="onhover"};h[a].onmouseout=function(){this.className=""}}for(var k=function(a,b){if(a.id==i.menuId)return b;else{b+=a.offsetTop;return k(a.parentNode.parentNode,b)}},a=0;a<b.length;a++){var c=b[a].parentNode;c.getElementsByTagName("a")[0].className+=" arrow";b[a].style.left=c.offsetWidth+"px";b[a].style.top=c.offsetTop+"px";if(i.alignWithMainMenu){var d=k(c.parentNode,0);if(b[a].offsetTop+b[a].offsetHeight+d>j){var f;if(b[a].offsetHeight>j)f=-d;else f=j-b[a].offsetHeight-d;b[a].style.top=f+"px"}}c.onmouseover=function(){if(g)this.className="onhover";var a=this.getElementsByTagName("ul")[0];if(a){a.style.visibility="visible";a.style.display="block"}};c.onmouseout=function(){if(g)this.className="";this.getElementsByTagName("ul")[0].style.visibility="hidden";this.getElementsByTagName("ul")[0].style.display="none"}}for(var a=b.length-1;a>-1;a--)b[a].style.display="none"}
+</script>
+
+
+ <div id="column-left">
+    <div class="box">
+      <div class="box-heading">Все категории</div>
+      <div class="box-content">
+  <ul id="menu-v" class="box-category">
+
+ <%=  @product_categories.each do |product_category| %>
+
+   <% if product_category.product_categories.count > 0 %>
+
+    <% if product_category.id ==  product_category.product_category.id %>
+      <li><a href="<%= product_category_path(product_category) %>"><%= product_category.name %></a>
+        <ul class="sub">
+          <% product_category.product_categories.each do |product_category| %>
+            <% if product_category.id !=  product_category.product_category.id %>
+                    <li><a href="<%= product_category_path(product_category) %>"><%= product_category.name %></a>
+                      <ul class="sub">
+                        <% product_category.product_categories.each do |product_category| %>
+                          <% if product_category.id !=  product_category.product_category.id %>
+                                  <li><a href="<%= product_category_path(product_category) %>"><%= product_category.name %></a></li>
+                                <%  end %>  
+                              <% end %>    
+                          </ul>
+                    </li>
+                  <%  end %>  
+                <% end %>    
+            </ul>
+      </li>
+    <% end %>
+
+  <% end %>
+<% end %>
+</ul>
+</div>
+</div>
+ </div>

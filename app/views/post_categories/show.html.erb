@@ -1,0 +1,8 @@
+<% provide(:title, @post_category.meta_title) %>
+<% provide(:description, @post_category.meta_description) %>
+<% provide(:keywords, @post_category.meta_keywords) %>
+<div id="container">
+	<%= render('post_categories/blocks/sidebar') %>
+	<%= render('post_categories/blocks/articles_list') %>
+					
+</div>

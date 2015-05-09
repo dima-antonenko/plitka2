@@ -1,0 +1,60 @@
+
+  <div id="content">
+    <h1><span class="h1-top">Корзина</span></h1>
+    <form action="shoppingcart.html" method="post" enctype="multipart/form-data">
+      <div class="cart-info">
+        <table>
+          <thead>
+            <tr>
+              <td class="image">Название</td>
+              <td class="model">Артикул</td>
+              <td class="quantity">Цена за еденицу</td>
+              <td class="price">Количество</td>
+              <td class="total">Стоимость</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cart.line_items.each do |item| %>
+            <tr class="cart-item">
+              <td class="name"><a href="product.html"><%= item.product.name %></a>
+                <div> </div></td>
+              <td class="model"><%= item.product.sku %></td>
+              <td class="quantity"><%= number_to_currency(item.product.price, unit: "р.",delimiter: " ' ",  format: "%n %u", precision: 0) %></td>
+              <td class="price"><%= item.quantity %></td>
+              <td class="total"><%= number_to_currency(item.product.price * item.quantity, unit: "р.",delimiter: " ' ",  format: "%n %u", precision: 0) %>
+
+                <div class="reload">
+                 <%= link_to 'Удалить', line_item_path(item), method: :delete, data: { confirm: 'Удалить товар ?' }, class: "color_dark" %> 
+                 </div></td>
+            </tr>
+            
+            <% end %>
+            
+          </tbody>
+        </table>
+      </div>
+    </form>
+    
+    <div class="content">
+      <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+  
+    </div>      
+    <div class="cart-total">
+      <table id="total">
+        <tbody>
+          <tr>
+            <td class="right"><b>Всего:</b></td>
+            <td class="right last"><%= number_to_currency(@cart.total_price , unit: "р.",delimiter: " ' ",  format: "%n %u", precision: 0) %></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="buttons">
+      <div class="right">
+      
+      <%= button_to 'Очистить корзину', @cart, method: :delete, class: "button", data: { confirm: 'Удалить все товары из корзины ?' } %></div>
+      <div class="center"><%= button_to 'Оформить заказ', new_order_path, method: :get, class: "button"  %></div>
+    </div>
+  </div>
+</div>

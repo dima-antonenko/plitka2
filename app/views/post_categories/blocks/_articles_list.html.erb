@@ -1,0 +1,20 @@
+ <div id="content">
+    <h1><span class="h1-top"><%= @post_category.title %></span></h1>
+    <div class="information_content">
+
+    <% @post_category.posts.each do |post| %>  
+      <div class="post_item">
+        <h2><%= link_to post.title, post_category_post_path(@post_category, post) %></h2>
+        <div class="imageborder">
+        
+        <%= image_tag post.avatar.url(:thumb) %>
+        </div>
+        <p class="short_content"><%= post.lead.html_safe %> </p>
+        <%= link_to "далее ...", post_category_post_path(@post_category, post) %>
+        </p>
+      </div>
+
+    <% end %>
+
+    </div>
+  </div>
