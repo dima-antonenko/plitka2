@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505042036) do
+ActiveRecord::Schema.define(version: 20150509151841) do
 
   create_table "banners", force: :cascade do |t|
     t.string   "title"
@@ -53,6 +53,34 @@ ActiveRecord::Schema.define(version: 20150505042036) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+
+  create_table "collections", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "interior_list"
+    t.string   "brand"
+    t.string   "country"
+    t.string   "size"
+    t.string   "meta_title"
+    t.string   "meta_description"
+    t.string   "meta_keywords"
+    t.boolean  "to_bathroom"
+    t.boolean  "to_kitchen"
+    t.boolean  "to_corridor"
+    t.boolean  "to_living"
+    t.boolean  "to_fasad"
+    t.boolean  "to_floor"
+    t.boolean  "to_construction"
+    t.boolean  "to_public"
+    t.integer  "basic_category"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "connections", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "product_category_id"
+  end
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -180,14 +208,43 @@ ActiveRecord::Schema.define(version: 20150505042036) do
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.decimal  "price"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "avatar"
+    t.integer  "collection_id"
+    t.string   "code"
+    t.string   "edizm"
+    t.string   "field_of_application_list"
+    t.string   "place_in_the_collection"
+    t.string   "minpart"
+    t.string   "cratnost"
+    t.string   "weight"
+    t.string   "size"
+    t.string   "architectural_surface"
+    t.string   "base_value"
+    t.string   "color_value"
+    t.string   "cover_value"
+    t.string   "surface_alue"
+    t.string   "image"
+    t.integer  "ballance"
+    t.decimal  "ballance_count"
+    t.string   "category"
+    t.string   "design_value"
+    t.string   "frost_hardiness"
+    t.string   "rectified"
+    t.boolean  "to_bathroom"
+    t.boolean  "to_kitchen"
+    t.boolean  "to_corridor"
+    t.boolean  "to_living"
+    t.boolean  "to_fasad"
+    t.boolean  "to_floor"
+    t.boolean  "to_construction"
+    t.boolean  "to_public"
   end
 
   add_index "products", ["avatar_content_type"], name: "index_products_on_avatar_content_type"

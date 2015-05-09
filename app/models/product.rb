@@ -3,8 +3,11 @@ class Product < ActiveRecord::Base
 	validates :name, presence: true
 	validates :product_category_id, presence: true
 
-	belongs_to :product_category
+	belongs_to :collection
 	has_many :line_items
+
+
+	
 
 	before_destroy :ensure_not_referenced_by_any_line_item
 
