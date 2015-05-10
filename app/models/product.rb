@@ -1,7 +1,5 @@
 class Product < ActiveRecord::Base
 
-	validates :name, presence: true
-	validates :product_category_id, presence: true
 
 	belongs_to :collection
 	has_many :line_items

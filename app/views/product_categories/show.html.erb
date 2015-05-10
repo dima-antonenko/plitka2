@@ -1,36 +1,16 @@
-<style type="text/css">
-  #content{
-    margin-top: -80px;
-  }
-  .category-info {
-    padding-top: 23px;
-  }
-</style>
+<h2><%= @product_category.name %></h2>
 
-<% provide(:title, @product_category.meta_title) %>
-<% provide(:description, @product_category.meta_description) %>
-<% provide(:keywords, @product_category.meta_keywords) %>
+<% if @product_category.product_categories.count > 0  %>
+  <% @product_category.product_categories.each do |category| %>
+    <%= link_to category.name, product_category_path(category) %><br/>
+  <% end %>
+<% end %>  
 
-	<%= render '/product_categories/blocks/sidebar/sidebar' %>
-  <div id="content">
-  
-    <h1><span class="h1-top"><%= @product_category.name %></span></h1>
-    <div class="category-info">
-      <%= @product_category.description.html_safe %>
-    </div>
+<hr/>
 
-    
-    
-   		<%= render '/product_categories/blocks/categories_list' %>
-  
-	
-    <div class="product-filter">
-      <div class="display">
-       
-      </div>
-    </div>
-
-	
-
-<%= render '/product_categories/blocks/products_list' %>
- 
+<% if @product_category.collections.count > 0  %>
+  <% @product_category.collections.each do |collection| %>
+    <%# link_to collection.name, product_category_collectionpath(@product_category, collection) %>
+    <%= collection.name %><br/>
+  <% end %>
+<% end %>

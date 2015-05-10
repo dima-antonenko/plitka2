@@ -1,6 +1,6 @@
 class ProductCategoriesController < ApplicationController
   before_action :set_product_category, only: [:show, :edit, :update, :destroy]
-
+  layout false
   # GET /product_categories
   # GET /product_categories.json
   def index

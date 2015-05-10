@@ -1,13 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  layout false
 
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @product_category_menu = Menu.where(place: "catalog_menu").first
-    @i = 0
   end
   
 

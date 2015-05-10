@@ -77,10 +77,32 @@ ActiveRecord::Schema.define(version: 20150509151841) do
     t.datetime "updated_at",       null: false
   end
 
+  add_index "collections", ["basic_category"], name: "index_collections_on_basic_category"
+  add_index "collections", ["brand"], name: "index_collections_on_brand"
+  add_index "collections", ["country"], name: "index_collections_on_country"
+  add_index "collections", ["description"], name: "index_collections_on_description"
+  add_index "collections", ["interior_list"], name: "index_collections_on_interior_list"
+  add_index "collections", ["meta_description"], name: "index_collections_on_meta_description"
+  add_index "collections", ["meta_keywords"], name: "index_collections_on_meta_keywords"
+  add_index "collections", ["meta_title"], name: "index_collections_on_meta_title"
+  add_index "collections", ["name"], name: "index_collections_on_name"
+  add_index "collections", ["size"], name: "index_collections_on_size"
+  add_index "collections", ["to_bathroom"], name: "index_collections_on_to_bathroom"
+  add_index "collections", ["to_construction"], name: "index_collections_on_to_construction"
+  add_index "collections", ["to_corridor"], name: "index_collections_on_to_corridor"
+  add_index "collections", ["to_fasad"], name: "index_collections_on_to_fasad"
+  add_index "collections", ["to_floor"], name: "index_collections_on_to_floor"
+  add_index "collections", ["to_kitchen"], name: "index_collections_on_to_kitchen"
+  add_index "collections", ["to_living"], name: "index_collections_on_to_living"
+  add_index "collections", ["to_public"], name: "index_collections_on_to_public"
+
   create_table "connections", force: :cascade do |t|
     t.integer "collection_id"
     t.integer "product_category_id"
   end
+
+  add_index "connections", ["collection_id"], name: "index_connections_on_collection_id"
+  add_index "connections", ["product_category_id"], name: "index_connections_on_product_category_id"
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"

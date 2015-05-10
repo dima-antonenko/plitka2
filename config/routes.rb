@@ -14,9 +14,16 @@ Rails.application.routes.draw do
     resources :posts, only: [:show]
   end
 
-  resources :product_categories, only: [:show, :index] do
-    resources :products, only: [:show]
+  resources :product_categories do
+    resources :collections
   end
+
+  resources :collections do
+    resources :products
+  end
+
+  match '/import', to: 'import#index', via: 'get'
+  match '/import/test', to: 'import#test', via: 'get'
 
   root 'static#home'
 
