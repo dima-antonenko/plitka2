@@ -1,6 +1,5 @@
-class ColectionController < ApplicationController
-  before_action :set_collection, only: [:show, :edit, :update, :destroy]
-  layout false
+class CollectionsController < ApplicationController
+  before_action :set_collection, only: [:show]
   # GET /product_categories
   # GET /product_categories.json
   def index
@@ -17,13 +16,13 @@ class ColectionController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_product_category
+    def set_collection
       @collection = Collection.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def collection_params
 
-      params[:collection]
+      params.require(:collection).permit(:avatar)
     end
 end

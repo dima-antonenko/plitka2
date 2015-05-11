@@ -9,17 +9,15 @@
 					<div class="row clearfix">
 						<!--left content column-->
 						<section class="col-lg-9 col-md-9 col-sm-9">
-							<h2 class="tt_uppercase color_dark m_bottom_25"><%= @product_category.name %></h2>
+							<h2 class="tt_uppercase color_dark m_bottom_25"><%= @collection.name %></h2>
 							<hr class="m_bottom_10 divider_type_3">
 							<!--products-->
 							<section class="products_container category_grid clearfix m_bottom_15">
-							<% if @product_category.product_categories.count > 0 %>
-								<%= render '/product_categories/blocks/categories_list' %>
+							<% if @collection.products.count > 0 %>
+								<%= render '/collections/blocks/products_list' %>
 							<% end %>
 
-							<% if @product_category.collections.count > 0 %>
-								<%= render '/product_categories/blocks/collections_list' %>
-							<% end %>
+							
 							</section>
 							<hr class="m_bottom_10 divider_type_3">
 						</section>

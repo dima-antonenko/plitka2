@@ -2568,7 +2568,7 @@ li:hover .tooltip,a:hover .tooltip,button:hover .tooltip{
 }
 .breadcrumbs{
 	background:#f2f4f5;
-	padding:9px 0;
+	padding: 0;
 }
 .widget figcaption{
 	background:#323a45;
