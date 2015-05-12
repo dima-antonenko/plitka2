@@ -29,6 +29,7 @@ class ApplicationController < ActionController::Base
 
   def menu
     @main_menu = Menu.where(place: "main_menu").first
+    @top_menu = Menu.where(place: "top_menu").first
     @product_categories = ProductCategory.all
   end
 
