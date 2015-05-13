@@ -31,6 +31,7 @@ class ApplicationController < ActionController::Base
     @main_menu = Menu.where(place: "main_menu").first
     @top_menu = Menu.where(place: "top_menu").first
     @product_categories = ProductCategory.all
+    @header_content = SiteVariable.where(place: "header")
   end
 
   def footer
