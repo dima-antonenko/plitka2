@@ -1,8 +1,13 @@
-	<div class="banner">
-      <div><a href="<%= @banners.first.link %> ">
-      <img src="<%= @banners.first.avatar.url(:small)%>" ></a> </div>
-    </div>
-		<div class="banner">
-      <div><a href="<%= @banners.last.link %>">
-      <img src="<%= @banners.last.avatar.url(:small)%>" ></a> </div>
-    </div>
+<section class="row clearfix m_bottom_45 m_sm_bottom_35">
+						<div class="col-lg-6 col-md-6 col-sm-6 animate_half_tc">
+							<a href="<%= @banners.first.link %>" class="d_block banner wrapper r_corners relative m_xs_bottom_30">
+								<img src="<%= @banners.first.avatar.url(:small)%>" alt="">
+							</a>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 animate_half_tc">
+							<a href="<%= @banners.last.link %>" class="d_block banner wrapper r_corners type_2 relative">
+								<img src="<%= @banners.last.avatar.url(:small)%>" alt="">
+								
+							</a>
+						</div>
+					</section>

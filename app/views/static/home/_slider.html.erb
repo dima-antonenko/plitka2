@@ -1,13 +1,11 @@
-<div id="slide-wrapper">
-      <ul id="slider">
-      <% @slider.slides.each  do |slide| %>
-        <li>
-          <div class="border_on_img"></div>
-          <div class="content_slider">
-            <p><%= slide.content %></p>
-          </div>
-          <%= image_tag slide.avatar.url(:medium) %>
-        </li>
-      <% end %>
-      </ul>
-    </div>
+  <section class="revolution_slider">
+        <div class="r_slider">
+          <ul>
+          <% @slider.slides.each  do |slide| %>
+            <li class="f_left" data-transition="curtain-1" data-slotamount="7" >
+              <img src="<%= slide.avatar.url(:medium) %>" alt="" data-bgrepeat="no-repeat" data-bgfit="cover" data-bgposition="center center">
+            </li>
+          <%  end  %>
+          </ul>
+        </div>
+      </section>
