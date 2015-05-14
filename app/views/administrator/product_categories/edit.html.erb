@@ -88,6 +88,14 @@
 													</div>
 													<%= image_tag @product_category.avatar.url(:medium) %>
 												</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Большое изображение: </span>
+													</label>
+													<div class="col-md-10">
+														<%= f.file_field :big_image %>
+													</div>
+													<%= image_tag @product_category.big_image.url(:medium) %>
+												</div>
 											</div>
 										</div>
 										<div class="tab-pane" id="tab_seo">

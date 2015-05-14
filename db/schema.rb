@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509151841) do
+ActiveRecord::Schema.define(version: 20150514073649) do
 
   create_table "banners", force: :cascade do |t|
     t.string   "title"
@@ -204,8 +204,8 @@ ActiveRecord::Schema.define(version: 20150509151841) do
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "product_category_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -215,6 +215,10 @@ ActiveRecord::Schema.define(version: 20150509151841) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "big_image_file_name"
+    t.string   "big_image_content_type"
+    t.integer  "big_image_file_size"
+    t.datetime "big_image_updated_at"
   end
 
   add_index "product_categories", ["meta_description"], name: "index_product_categories_on_meta_description"
