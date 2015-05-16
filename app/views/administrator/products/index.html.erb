@@ -53,7 +53,7 @@
 									</td>
 									<td>
 										
-											<%= product.product_category.name %>
+											<%# product.product_category.name %>
 									</td>
 									<td>
 										 <%= product.price %>
@@ -68,9 +68,11 @@
 							<% end %>
 							</tbody>
 							</table>
+
 						</div>
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
+					<%= will_paginate @products %>
 				</div>
 			</div>
 			

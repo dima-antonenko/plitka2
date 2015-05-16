@@ -3,7 +3,7 @@ class Administrator::ProductsController < AdministratorController
  before_action :set_product, only: [:edit, :update, :destroy, :delete]
 
 	def index
-		@products = Product.all
+		@products = Product.paginate(:page => params[:page], :per_page => 10)
 		render 'administrator/products/index'
 	end
 
