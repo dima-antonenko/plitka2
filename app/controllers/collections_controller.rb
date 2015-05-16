@@ -3,7 +3,7 @@ class CollectionsController < ApplicationController
   # GET /product_categories
   # GET /product_categories.json
   def index
-    @collections = Collection.all
+    @collections = Collection.paginate(:page => params[:page], :per_page => 10)
    
   end
 

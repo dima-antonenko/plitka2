@@ -1,10 +1,10 @@
-<% @collection.products.each do |product| %>
+<% @collection.products.paginate(:page => params[:page], :per_page => 9).each do |product| %>
 								<!--product item-->
 								<div class="product_item hit w_xs_full">
 									<figure class="r_corners photoframe type_2 t_align_c tr_all_hover shadow relative">
 										<!--product preview-->
 										<a href="<%= collection_product_path(@collection, product) %>" class="d_block relative wrapper pp_wrap m_bottom_15">
-											<img src="/images/product_img_1.jpg" class="tr_all_hover" alt="">
+											<img src="<%= product.image %>" class="tr_all_hover" alt="">
 										</a>
 										<!--description and price of product-->
 										<figcaption>

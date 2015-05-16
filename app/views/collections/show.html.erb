@@ -30,7 +30,7 @@
 							<div class="r_corners m_bottom_40">
 								<div class="collection_image">
 									
-											<img src="/images/product_img_1.jpg" class="tr_all_hover" alt="">
+											<img src="<%= @collection.interior_list %>" class="tr_all_hover" alt="">
 										
 								</div>
 								<div class="collection_params">
@@ -120,6 +120,7 @@
 							
 							</section>
 							<hr class="m_bottom_10 divider_type_3">
+							<%= will_paginate @collection.products.paginate(:page => params[:page], :per_page => 9) %>
 						</section>
 						<!--right column-->
 
