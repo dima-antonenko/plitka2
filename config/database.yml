@@ -24,7 +24,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: dima-ant_ddvor76
-  username: dima-ant_ddvor76
-  password: Y6C8VnZG4
+  database: dima-ant_plitk51
+  username: dima-ant_plitk51
+  password: ZQ9FArRH
   host: postgresql2.locum.ru
