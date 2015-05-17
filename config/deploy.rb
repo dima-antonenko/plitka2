@@ -113,24 +113,7 @@ desc "build missing paperclip styles"
     end
   end
 
-    desc 'Clean up old releases'
-    task :cleanup do
-      on release_roles :all do |host|
-        releases = capture(:ls, '-xtr', releases_path).split
-        if releases.count >= fetch(:keep_releases)
-          info t(:keeping_releases, host: host.to_s, keep_releases: fetch(:keep_releases), releases: releases.count)
-          directories = (releases - releases.last(fetch(:keep_releases)))
-          if directories.any?
-            directories_str = directories.map do |release|
-              releases_path.join(release)
-            end.join(" ")
-            execute :rm, '-rf', directories_str
-          else
-            info t(:no_old_releases, host: host.to_s, keep_releases: fetch(:keep_releases))
-          end
-        end
-      end
-    end
+  
 
 
 after :finishing, 'deploy:cleanup'
