@@ -1,11 +1,6 @@
-
 Banner.create!([
   {title: "Баннер 1", avatar_file_name: "banner_img_1.png", avatar_content_type: "image/png", avatar_file_size: 3178, avatar_updated_at: "2015-05-13 05:51:01", link: "#"},
   {title: "Баннер 2", avatar_file_name: "banner_img_1.png", avatar_content_type: "image/png", avatar_file_size: 3178, avatar_updated_at: "2015-05-13 05:50:50", link: "#"}
-])
-
-LineItem.create!([
-  {product_id: 39681, cart_id: nil, quantity: 1, order_id: 15}
 ])
 Menu.create!([
   {title: "Главное меню", place: "main_menu"},
@@ -22,9 +17,6 @@ MenuItem.create!([
   {menu_id: 1, menu_item_id: 1, title: "Контакты", link: "/contacts", position: 4},
   {menu_id: 1, menu_item_id: 1, title: "Пункт меню", link: "/", position: 6},
   {menu_id: 1, menu_item_id: 18, title: "Подпункт", link: "/", position: 1}
-])
-Order.create!([
-  {name: "Дмитрий", address: "Первомайская, 11", email: "d.antonenko94@mail.ru", pay_type: "Наличный расчет", products: nil, total_price: 326, phone_number: "+7 123 456 789", region: "Луганская", sity: "Луганск"}
 ])
 Post.create!([
   {post_category_id: 1, title: "Новость 1", text: "<p><span style=\"background-color:#e9f5fa; color:#333333; font-family:source sans pro,arial; font-size:14px\">Интернет магаз<strong>ин детских товаров имеет удобный каталог, который позволит вам с легкостью сориентироваться в ассортименте продукции</strong> и подобрать замечательную продукцию новорожденным, кроватки, матрасы, горки, батуты, мячи, бассейны, стульчики для кормления, автокресла и много чего другого. Детские товары, предлагаемые магазином в Киеве, отвечают современным стандартам качества, принятым в европейских странах, а также требованиям безопасности. Именно поэтому родители даже могут не сомневаться в том, что продукция, предложенная им, имеет всю нужную документацию от компаний-производителей и, соответственно, магазин предоставляет на любые товары гарантийный срок эксплуатации.&nbsp;</span></p>\r\n", lead: "Интернет магазин детских товаров имеет удобный каталог, который позволит вам с легкостью сориентироваться в ассортименте продукции и подобрать замечательную продукцию новорожденным, кроватки, матрасы, горки, батуты, мячи, бассейны, стульчики для кормления, автокресла и много чего другого.", meta_title: "Title:", meta_description: "Description:", meta_keywords: "Keywords:", avatar_file_name: "product_img_1.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 7549, avatar_updated_at: "2015-05-17 06:34:45"},
