@@ -1,22 +1,9 @@
-User.create!([
-  {email: "1@mail.ru", encrypted_password: "$2a$10$2K.HHIYgUGfuM6QlLYgIQOaRZE1KR5onMcWcXiLFR7fPaWQswrrmO", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: "2015-05-03 00:13:39", sign_in_count: 52, current_sign_in_at: "2015-05-12 22:58:11", last_sign_in_at: "2015-05-06 20:51:07", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
-])
+
 Banner.create!([
   {title: "Баннер 1", avatar_file_name: "banner_img_1.png", avatar_content_type: "image/png", avatar_file_size: 3178, avatar_updated_at: "2015-05-13 05:51:01", link: "#"},
   {title: "Баннер 2", avatar_file_name: "banner_img_1.png", avatar_content_type: "image/png", avatar_file_size: 3178, avatar_updated_at: "2015-05-13 05:50:50", link: "#"}
 ])
-Cart.create!([
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {}
-])
+
 Ckeditor::Asset.create!([
   {data_file_name: "nastol_com_ua_113908.jpg", data_content_type: "image/jpeg", data_file_size: 1186780, assetable_id: 1, assetable_type: "User", type: "Ckeditor::Picture", width: 2048, height: 1153},
   {data_file_name: "nastol_com_ua_113908.jpg", data_content_type: "image/jpeg", data_file_size: 1186780, assetable_id: 1, assetable_type: "User", type: "Ckeditor::Picture", width: 2048, height: 1153}
