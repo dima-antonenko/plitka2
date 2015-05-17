@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to @order, notice: 'Спасибо за Ваш заказ' }
+        format.html { redirect_to '/', notice: 'Спасибо за Ваш заказ' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }

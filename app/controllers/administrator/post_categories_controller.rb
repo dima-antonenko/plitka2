@@ -61,7 +61,7 @@ class Administrator::PostCategoriesController < AdministratorController
   def post_category_params
       params.require(:post_category).permit(:title, :description,
         :meta_title, :meta_description, :meta_keywords,  :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at,
-        :avatar, :)
+        :avatar)
   end
 
   def set_post_category

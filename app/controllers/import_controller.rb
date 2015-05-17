@@ -149,7 +149,6 @@ class ImportController < ApplicationController
 							ballance: product["ballance"], 
 							ballance_count:["ballanceCount"], 
 							category: category_id,
-							place_in_the_collection: product["place_in_the_collection"],
 							design_value: product["design_value"], 
 							frost_hardiness: product["frost_hardiness"], 
 							rectified: product["Rectified"],
