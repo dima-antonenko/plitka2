@@ -4,11 +4,6 @@ Banner.create!([
   {title: "Баннер 2", avatar_file_name: "banner_img_1.png", avatar_content_type: "image/png", avatar_file_size: 3178, avatar_updated_at: "2015-05-13 05:50:50", link: "#"}
 ])
 
-Ckeditor::Asset.create!([
-  {data_file_name: "nastol_com_ua_113908.jpg", data_content_type: "image/jpeg", data_file_size: 1186780, assetable_id: 1, assetable_type: "User", type: "Ckeditor::Picture", width: 2048, height: 1153},
-  {data_file_name: "nastol_com_ua_113908.jpg", data_content_type: "image/jpeg", data_file_size: 1186780, assetable_id: 1, assetable_type: "User", type: "Ckeditor::Picture", width: 2048, height: 1153}
-])
-
 LineItem.create!([
   {product_id: 39681, cart_id: nil, quantity: 1, order_id: 15}
 ])
@@ -107,8 +102,4 @@ Slide.create!([
 ])
 Slider.create!([
   {title: "Основной слайдер"}
-])
-Ckeditor::Picture.create!([
-  {data_file_name: "nastol_com_ua_113908.jpg", data_content_type: "image/jpeg", data_file_size: 1186780, assetable_id: 1, assetable_type: "User", type: "Ckeditor::Picture", width: 2048, height: 1153},
-  {data_file_name: "nastol_com_ua_113908.jpg", data_content_type: "image/jpeg", data_file_size: 1186780, assetable_id: 1, assetable_type: "User", type: "Ckeditor::Picture", width: 2048, height: 1153}
 ])
