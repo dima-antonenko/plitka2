@@ -4162,3 +4162,17 @@ only screen and (min-resolution: 144 dpi){
 		background-size:22px 22px;		
 	}
 }
+
+.product_item .r_corners img{
+	width: 242px;
+	height: 242px;
+}
+
+.collection_image .tr_all_hover{
+	width: 242px;
+	height: 242px;
+}
+
+.product_item h5 {
+	height: 42px;
+}

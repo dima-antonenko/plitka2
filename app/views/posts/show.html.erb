@@ -1,15 +1,35 @@
 <% provide(:title, @post.meta_title) %>
 <% provide(:description, @post.meta_description) %>
 <% provide(:keywords, @post.meta_keywords) %>
- <%= render('post_categories/blocks/sidebar') %>
-  <div id="content">
-    <h1><span class="h1-top"><%= @post.title %></span></h1>
-    <div class="information_content">
-      <div class="post_item">
-        <p class="post_info">опубликовано <%= @post.updated_at.to_s[2...-4] %></p>
-        <div class="imageborder"><%= image_tag @post.avatar.url(:big) %></div>
-          <%= @post.text.html_safe %>
-       </div>
-      <div class="clear"></div>
-    </div>
-  </div>
+ 
+
+    <section class="breadcrumbs">
+        <div class="container">
+          <ul class="horizontal_list clearfix bc_list f_size_medium">
+          </ul>
+        </div>
+      </section>
+      <!--content-->
+      <div class="page_content_offset">
+        <div class="container">
+          <div class="row clearfix">
+            <!--left content column-->
+            <section class="col-lg-9 col-md-9 col-sm-9">
+              <!--blog post-->
+              <article class="m_bottom_15">
+                <div class="row clearfix m_bottom_15">
+                  <div class="col-lg-9 col-md-9 col-sm-8">
+                    <h2 class="m_bottom_5 color_dark fw_medium m_xs_bottom_10"><%= @post.title %></h2>
+                   
+                  </div>
+                  
+                </div>
+                
+                 <%= @post.text.html_safe %>
+              </article>
+              
+            </section>
+            <%= render('post_categories/blocks/sidebar') %>
+          </div>
+        </div>
+      </div>
