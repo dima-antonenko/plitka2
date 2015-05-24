@@ -120,4 +120,4 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 end
 after("deploy:compile_assets", "deploy:build_missing_paperclip_styles")
-after :finishing, 'deploy:cleanup'
+after "deploy:build_missing_paperclip_styles", 'deploy:cleanup'
